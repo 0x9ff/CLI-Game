@@ -4,17 +4,13 @@ import datetime
 from colorama import Fore, Style
 
 ####################
-# Function Handeler
 
-# To be added here
-
-####################
 # Variables
 
 VERSION = "0.1.0.1"
 TIME = datetime.datetime.now()
-SLEEP_MIN = 0 #2
-SLEEP_MAX = 0 #5
+SLEEP_MIN = 2 #0
+SLEEP_MAX = 5 #0
 
 ####################
 
@@ -73,10 +69,11 @@ def part_1():
   pt149_input = input("Would you like to run?" + "\n")
 
   if pt149_input == "yes" or pt149_input == "y":
-    print("You chose yes. You are running towards the attic, and then you notice.. Somethings not right about yourself.." + "\n")
+    print("You chose yes. You decide to go and run, and then you notice.. Somethings not right.." + "\n")
+    part_2()
     
   elif pt149_input == "no" or pt149_input == "n":
-    print("An unexplainable creature comes out of one of the attics storage boxes.. You see it, and suddenly, everything turns black and white.." + "\n")
+    print("An unexplainable creature comes out of nowhere.. You see it, and suddenly, everything turns black and white.." + "\n")
     print("You blink and suddenly, you're in the endless, dark, cold void. There is no life here, in fact there's nothing." + "\n")
     print("You call for help... but nobody answered..")
     time.sleep(SLEEP_MIN)
@@ -87,6 +84,30 @@ def part_1():
     print(Fore.RED + "Error: type in y/yes or n/no" + Style.RESET_ALL)
     print("Check out this cool QR code!!")
     troll()
+
+def part_2():
+  print("There seems to be a strange portal in the street of your home.." + "\n")
+  print("Oh and everything is black and white around you. The grass, the sky, your neighbors house, and even yourself.." + "\n")
+
+  portal_input = input("Would you like to jump into the portal?" + "\n")
+
+  if portal_input == "yes" or portal_input == "y":
+    print("You get transported to the fourth dimension and well.. your human brain cannot possibly comprehend what your looking at so you instantly die. :(")
+    rip()
+    exit(0)
+
+  elif portal_input == "no" or portal_input == "n":
+    print("...")
+    time.sleep(SLEEP_MIN)
+    print("....")
+    time.sleep(SLEEP_MIN)
+    print("A godly being comes from the sky and saves your life. You then get back to your normal life :D")
+    print("Everything is well and great, or is it?")
+    end()
+
+def end():
+  end_banner = pyfiglet.figlet_format("The End")
+  print(Fore.GREEN + end_banner + Style.RESET_ALL)
 
 intro()
 part_1()
